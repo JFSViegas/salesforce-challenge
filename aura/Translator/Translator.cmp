@@ -1,0 +1,55 @@
+<aura:component controller="TranslationController" implements="flexipage:availableForAllPageTypes" access="global">
+	<aura:attribute name="isButtonDisabled" type="Boolean" default="true" />
+    <aura:attribute name="inputText" 		type="String"/>
+    <aura:attribute name="languageSelected" type="String"/>
+    <aura:attribute name="translation" 		type="String"/>
+    
+    <div class="slds-section slds-is-open slds-card slds-card_boundary">
+    <h3 class="slds-section__title">
+        <div class="slds-theme_alt-inverse slds-align_absolute-center slds-card slds-card_boundary slds-text-align_center slds-text-font_monospace slds-text-color_default" style="color: rgb(255, 255, 255); background-color: rgb(27, 82, 151); width:100%;">Translator</div>
+    </h3>
+    <div class="slds-grid slds-gutters">
+  		<div class="slds-col">
+        	<lightning:input class="slds-m-left_xx-small slds-m-right_xx-small slds-m-top_x-large" name="input" aura:id="inputText" required="true" placeholder="Insert your text here" type="text" variant="label-hidden" onchange="{!c.enableButton}"/>
+            <lightning:layout class="slds-m-around_xx-small">
+            <lightning:select name="language" aura:id="languageSelected" label="Language" required="true" variant="standard">
+                <option value="">Please select</option>
+                <option value="">Arabic</option>
+                <option value="">Bulgarian</option>
+                <option value="">Chinese (Simplified)</option>
+                <option value="">Chinese (Traditional)</option>
+                <option value="">Czech</option>
+                <option value="">Danish</option>
+                <option value="">Dutch</option>
+                <option value="">English</option>
+                <option value="">Finnish</option>
+                <option value="">French</option>
+                <option value="">German</option>
+                <option value="">Greek</option>
+                <option value="">Hindi</option>
+                <option value="">Indonesian</option>
+                <option value="">Italian</option>
+                <option value="">Japanese</option>
+                <option value="">Korean</option>
+                <option value="">Norwegian</option>
+                <option value="">Polish</option>
+                <option value="">Portuguese</option>
+                <option value="">Portuguese (Brazilian)</option>
+                <option value="">Romanian</option>
+                <option value="">Russian</option>
+                <option value="">Spanish</option>
+                <option value="">Spanish (Latin American)</option>
+                <option value="">Swedish</option>
+                <option value="">Thai</option>
+                <option value=""> Turkish</option>
+                <option value=""> Vietnamese</option>
+            </lightning:select>
+            <lightning:button class="slds-m-top_large slds-m-left_x-large slds-theme_brand" variant="brand" label="Submit" iconName="standard:macros" onclick="{! c.translateText }" disabled="{!v.isButtonDisabled}"/>
+            </lightning:layout>
+        </div>
+  		<div class="slds-col">
+            <lightning:textarea class="slds-m-around_x-small" name="translationText" aura:id="translation" label="Translation" variant="standard"/>
+        </div>
+    </div>
+	</div>
+</aura:component>
