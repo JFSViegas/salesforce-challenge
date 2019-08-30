@@ -8,7 +8,7 @@
         action.setCallback(this, function(response) {
             var state = response.getState();
             if (state === "SUCCESS") {
-                this.makeText("Translation request submitted!");
+                this.makeText("Translation request submitted!", "success");
                 window.setTimeout($A.getCallback(() =>
                 	this.getTranslationStatus(component, event, helper, response.getReturnValue())
                 ), 1000);
@@ -22,7 +22,7 @@
                 } else {
                     console.log("Unknown error");
                 }
-                this.makeText("An error has ocurred. Please try again.");
+                this.makeText("An error has ocurred. Please try again.", "error");
             }
         });
         $A.enqueueAction(action);
@@ -60,10 +60,10 @@
         $A.enqueueAction(action);
     },
     
-    makeText : function(messageToDisplay) {
+    makeText : function(messageToDisplay, type) {
         var toastEvent = $A.get("e.force:showToast");
         toastEvent.setParams({
-            type: "success",
+            type: type,
             message: messageToDisplay
         });
         toastEvent.fire();

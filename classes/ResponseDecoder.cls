@@ -10,9 +10,7 @@ public class ResponseDecoder {
     public String uid;
        
     public ResponseDecoder decode(String res){
-        system.debug(res);
         ResponseDecoder obj = (ResponseDecoder) System.JSON.deserialize(res, ResponseDecoder.class);
-        system.debug(obj);
         return obj;
     }
 }

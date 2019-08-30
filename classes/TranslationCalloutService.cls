@@ -16,8 +16,6 @@ public class TranslationCalloutService {
         req.setHeader('Content-Type', 'application/json');
         Http http = new Http();
         HTTPResponse res = http.send(req);
-        system.debug('res get code: ' + res.getStatusCode());
-        system.debug('res get body: ' + res.getBody());
         if(res.getStatusCode() >= 200 && res.getStatusCode() < 300){
             ResponseDecoder translation = new ResponseDecoder();
             translation = translation.decode(res.getBody());

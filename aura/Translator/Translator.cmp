@@ -49,7 +49,7 @@
             </lightning:layout>
         </div>
   		<div class="slds-col">
-            <lightning:textarea class="slds-m-around_x-small" readonly = "true" name="translationText" value="{! v.translation }" label="Translation" variant="standard"/>
+            <lightning:textarea class="slds-m-around_x-small" readonly="true" name="translationText" value="{! v.translation }" label="Translation" variant="standard"/>
         </div>
     </div>
 	</div>

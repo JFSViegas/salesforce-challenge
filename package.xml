@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Final</fullName>
+    <fullName>FinalPack</fullName>
     <types>
+        <members>MockHttpResponseGenerator</members>
         <members>ResponseDecoder</members>
+        <members>ResponseDecoderTest</members>
         <members>TranslationCalloutService</members>
+        <members>TranslationCalloutServiceTest</members>
         <members>TranslationController</members>
+        <members>TranslationControllerTest</members>
         <members>TranslationRequestsController</members>
+        <members>TranslationRequestsControllerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -46,6 +51,12 @@
     <types>
         <members>Translation__c-Translation Layout</members>
         <name>Layout</name>
+    </types>
+    <types>
+        <members>ApexDevNet</members>
+        <members>GetLanguages</members>
+        <members>UnbabelAPI</members>
+        <name>RemoteSiteSetting</name>
     </types>
     <version>45.0</version>
 </Package>
